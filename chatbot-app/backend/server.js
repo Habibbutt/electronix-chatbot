@@ -22,7 +22,7 @@ const db = mysql.createConnection({
 db.connect(err => {
     if (err) {
         console.error('Database connection failed: ' + err.stack);
-        return;
+        process.exit(1); // Exit the process if there's a connection error
     }
     console.log('Connected to MySQL database.');
 });
